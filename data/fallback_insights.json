@@ -1,0 +1,27 @@
+[
+  {
+    "theme": "Growth",
+    "title": "Revenue growth is real but off a small base",
+    "body": "Revenue grew 21.6% YoY to €836,991, with international revenue nearly quadrupling as a share of the business (5% to 22%). That's encouraging directional evidence for the UK/EU expansion thesis, but the FY2025 base is still under €1m — the Senus 2030 target of 50%+ CAGR through 2030 requires this growth rate to roughly double and sustain for five years. The Board should track whether growth is broadening (more Enterprise logos, higher ACV) or concentrating (a few large R&D contracts), since the current mix is still 27% R&D-project revenue, which is typically lumpier and less recurring than subscription revenue."
+  },
+  {
+    "theme": "Profitability",
+    "title": "Margin expansion is the strongest signal in these accounts",
+    "body": "Gross margin expanded 14.6 percentage points (62.8% to 77.5%) while admin costs fell 18% in absolute terms — a rare combination of revenue growth and cost discipline that drove the operating loss down 44% and net loss down 46%. This is a materially better story than the revenue growth alone suggests, and is the single strongest evidence for the FY2028 EBITDA-positive target being achievable, provided the cost base doesn't need to re-inflate to support international expansion."
+  },
+  {
+    "theme": "Liquidity",
+    "title": "Cash runway was tight at FY25 year-end — the December placement was well-timed",
+    "body": "At the FY25 burn rate of roughly €31,235/month, the €140,135 cash balance implied only ~4.5 months of runway on a standalone basis. The €1.1m Private Placement completed in December 2025 extends this materially (pro-forma ~40 months at the same burn rate), but that assumes burn doesn't increase — and the placement proceeds are explicitly earmarked for sales hires, internationalisation and the Loamin integration, all of which typically increase cash burn before they increase revenue. Recommend the Board request a 12-month cash flow forecast reflecting the intended use of proceeds, not just the historical burn rate."
+  },
+  {
+    "theme": "Solvency",
+    "title": "Two data gaps limit what Credit Providers can assess today",
+    "body": "Neither EBITDA (no D&A disclosed) nor a debt service schedule (no interest/amortisation terms disclosed for the new SBCI loan) can be derived from the Information Document. Both are standard requirements for credit analysis. This isn't a red flag in itself — it reflects the limited disclosure requirements of Euronext Access+ relative to a regulated market — but it should be flagged as a follow-up request before this report is relied upon for a credit decision."
+  },
+  {
+    "theme": "Strategy",
+    "title": "Post-year-end events materially change the story that FY2025 alone tells",
+    "body": "The Loamin acquisition, Direct Listing, and €1.1m placement all occurred after 30 June 2025 and are not reflected in these financial statements. Management and the Board are the only audiences with visibility into how H1 FY2026 trading has progressed since — the source materials reference a trading update expected Jan/Feb 2026 that was not available at the time this report was generated. This is the single most important caveat for readers of this report."
+  }
+]

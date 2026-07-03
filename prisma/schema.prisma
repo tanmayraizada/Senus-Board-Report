@@ -1,0 +1,100 @@
+// Senus Board Report — data model
+// SQLite for local/demo use; every field maps 1:1 onto a Postgres deployment
+// by swapping the datasource provider (see README "Scaling to Postgres").
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Company {
+  id             String   @id @default(cuid())
+  name           String
+  ticker         String
+  isin           String
+  market         String
+  employees      Int
+  sharesInIssue  Int
+  admissionPrice Float
+  marketCap      Float
+  periods        FinancialPeriod[]
+  createdAt      DateTime @default(now())
+}
+
+/// One row per audited period (FY2024, FY2025, ...). Kept wide/denormalised
+/// on purpose — this is a reporting model, not a transactional ledger, and the
+/// source document itself reports at this granularity (Section 7.1).
+model FinancialPeriod {
+  id                String   @id @default(cuid())
+  company           Company  @relation(fields: [companyId], references: [id])
+  companyId         String
+  label             String   // "FY2025"
+  periodEnd         DateTime
+  isAudited         Boolean  @default(true)
+
+  // P&L
+  revenue           Float
+  grossProfit       Float
+  cogs              Float
+  adminExpenses     Float
+  operatingProfit   Float
+  profitBeforeTax   Float
+  profitAfterTax    Float
+  rdPctOfRevenue    Float
+
+  // Balance sheet (summary lines as disclosed — see dataGaps in README)
+  netAssets         Float
+  retainedEarnings  Float
+  tradeDebtors      Float
+  tradeCreditors    Float
+  cashClosing       Float
+  cashOpening       Float
+
+  // Cash flow
+  cfOperating       Float
+  cfInvesting       Float
+  cfFinancing       Float
+
+  // Mix (nullable — only disclosed for FY2025 in the source document)
+  internationalPct  Float?
+  customerTotal     Int?
+  customerEnterprise Int?
+  customerIndependent Int?
+  customerRd        Int?
+
+  lineItems         LineItem[]
+  insights          Insight[]
+
+  @@unique([companyId, label])
+}
+
+/// Free-form extension table so new disclosed metrics (e.g. a future ACV
+/// breakdown, a new segment) don't require a schema migration on every filing.
+model LineItem {
+  id         String          @id @default(cuid())
+  period     FinancialPeriod @relation(fields: [periodId], references: [id])
+  periodId   String
+  category   String   // e.g. "acv.soil", "relatedParty.directorLoan"
+  label      String
+  value      Float
+  unit       String   @default("EUR")
+}
+
+/// Cached AI-generated commentary, keyed by the metrics hash it was generated
+/// from, so the UI can serve instantly and only re-call the model when the
+/// underlying numbers actually change.
+model Insight {
+  id         String          @id @default(cuid())
+  period     FinancialPeriod @relation(fields: [periodId], references: [id])
+  periodId   String
+  theme      String   // "Growth" | "Profitability" | "Liquidity" | "Solvency" | "Strategy"
+  title      String
+  body       String
+  metricsHash String
+  model      String   @default("claude-sonnet-4-6")
+  createdAt  DateTime @default(now())
+}

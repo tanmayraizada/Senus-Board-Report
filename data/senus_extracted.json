@@ -1,0 +1,127 @@
+{
+  "$schema": "senus-board-report/financials-v1",
+  "source": {
+    "document": "Senus PLC – Information Document (Direct Listing on Euronext Access)",
+    "publisher": "Senus PLC / Euronext",
+    "url": "https://live.euronext.com/sites/default/files/2025-12/SENUS%20PLC%20-%20Information%20Document.pdf",
+    "datedFiled": "2025-12-17",
+    "extractedBy": "Claude (Anthropic) — AI-assisted document extraction, see scripts/extract_financials.py",
+    "extractionDate": "2026-07-03",
+    "note": "All 'disclosed' fields are reproduced without material adjustment from Section 7.1 'Summary Financial Information' and supporting narrative in the Information Document. Fields marked derived=true are calculated from disclosed figures. No half-year (Dec 2025) results were publicly available at extraction time, so FY2024/FY2025 audited annuals are the model's base."
+  },
+  "company": {
+    "name": "Senus PLC",
+    "formerName": "ADF Farm Solutions Limited (trading as FarmEye until Sept 2024)",
+    "ticker": "SENUS",
+    "isin": "IE000O0F49R3",
+    "market": "Euronext Access+ Dublin",
+    "listingDate": "2025-12-22",
+    "sector": "Natural Capital management software (ICB 10101015 Software)",
+    "hq": "Athlone, Co. Roscommon, Ireland",
+    "founded": "2017",
+    "employees": { "total": 18, "male": 12, "female": 6 },
+    "sharesInIssue": 2561332,
+    "admissionSharePrice": 5.126,
+    "marketCapAtListing": 13130000,
+    "privatePlacementDec2025": 1100000,
+    "strategy": {
+      "name": "Senus 2030",
+      "targetCAGR": 0.50,
+      "cagrWindow": "FY2026-FY2030",
+      "ebitdaPositiveTarget": "FY2028",
+      "enterpriseCustomerTarget2030": 100,
+      "avgEnterpriseACVTarget2030": 50000,
+      "irelandRevenueShareTarget2030": 0.50
+    }
+  },
+  "periods": {
+    "FY2024": {
+      "label": "FY2024 (year ended 30 Jun 2024)",
+      "pnl": {
+        "revenue": 688317,
+        "grossProfit": 432477,
+        "cogs": 255840,
+        "adminExpenses": 1560853,
+        "operatingProfitLoss": -1130729,
+        "profitLossBeforeTax": -1130458,
+        "profitLossAfterTax": -1098095,
+        "rdPctOfRevenue": 0.22,
+        "rdSpendEstimate": 151430
+      },
+      "balanceSheet": {
+        "netAssetsLiabilities": 574681,
+        "retainedEarnings": -275425,
+        "tradeDebtors": 142361,
+        "tradeCreditors": 26768,
+        "cashClosing": 424639,
+        "cashOpening": 1628654
+      },
+      "cashFlow": {
+        "operating": -1166697,
+        "investing": -33472,
+        "financing": -3846,
+        "netMovement": -1204015
+      },
+      "revenueMix": { "internationalPct": 0.05, "irelandPct": 0.95 }
+    },
+    "FY2025": {
+      "label": "FY2025 (year ended 30 Jun 2025)",
+      "pnl": {
+        "revenue": 836991,
+        "grossProfit": 648450,
+        "cogs": 188541,
+        "adminExpenses": 1286058,
+        "operatingProfitLoss": -633694,
+        "profitLossBeforeTax": -635768,
+        "profitLossAfterTax": -590256,
+        "rdPctOfRevenue": 0.17,
+        "rdSpendEstimate": 142289
+      },
+      "balanceSheet": {
+        "netAssetsLiabilities": -15575,
+        "retainedEarnings": -865681,
+        "tradeDebtors": 66990,
+        "tradeCreditors": 55246,
+        "creditorsUnder1yrIncrease": 153768,
+        "creditorsOver1yrIncrease": 83655,
+        "newSBCITermLoan": 100000,
+        "cashClosing": 140135,
+        "cashOpening": 424639
+      },
+      "cashFlow": {
+        "operating": -374820,
+        "investing": -3451,
+        "financing": 93767,
+        "netMovement": -284504
+      },
+      "revenueMix": { "internationalPct": 0.22, "irelandPct": 0.78 },
+      "customers": {
+        "total": 138,
+        "enterprise": 36,
+        "independent": 98,
+        "rd": 4,
+        "revenueSharePct": { "enterprise": 0.69, "independent": 0.04, "rd": 0.27 },
+        "enterpriseACVByProduct": { "soil": 12309, "terrain": 21524, "era": 58900 }
+      },
+      "relatedParty": {
+        "onaghConsultingServicesSupplied": 4631,
+        "onaghConsultingServicesReceived": 4110,
+        "directorLoans": [
+          { "director": "Anthony Childs", "amount": 100000, "drawnFrom": "2025-03", "repaid": "2025-10" },
+          { "director": "Gerard Keenan", "amount": 70000, "drawnFrom": "2025-03", "repaid": "2025-10" }
+        ]
+      },
+      "corporateEvents": [
+        { "date": "2025-11-14", "event": "Loamin Ltd acquisition completed (UK geospatial AI company)" },
+        { "date": "2025-12-22", "event": "Direct Listing on Euronext Access+ Dublin" },
+        { "date": "2025-12", "event": "€1.1m Private Placement completed ahead of Admission" }
+      ]
+    }
+  },
+  "dataGaps": [
+    "No separate EBITDA / D&A disclosure in the Information Document — Operating Loss is the closest disclosed proxy for EBIT; a true EBITDA bridge is not calculable without a D&A figure.",
+    "No detailed debt schedule (interest rate, principal amortisation) is disclosed for the SBCI-backed term loan, so a Debt Service Coverage Ratio cannot be reliably calculated — flagged rather than estimated.",
+    "No full balance sheet (total assets, fixed assets, current liabilities in full) is disclosed — only summary net asset/liability and named working-capital lines — so ROCE cannot be reliably calculated. Given the FY2025 net liability position, ROCE would in any case be negative/not meaningful for a pre-profitability business.",
+    "No H1 FY2026 (six months to 31 Dec 2025) results were publicly available at the time of extraction; the Information Document notes trading was 'in line with expectations' and refers to a trading update expected Jan/Feb 2026, but no figures were published in the source materials reviewed."
+  ]
+}
